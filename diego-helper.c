@@ -1,32 +1,16 @@
 #include <stdio.h>
-
 int main() {
-  int nDeHabitantes = 10;  // troca no numero aqui
-  int nDeFilhos[nDeHabitantes], maiorNDeFilhos = 0;
-  int codigos[nDeHabitantes], maisFilhosCodigo = 0;
-  int i = 0;
+  int ALUNOS, x, SOMA = 0, IDADE;
+  printf("Qual a quantidade maxima de alunos de uma turma?\n");
+  scanf("%i", &ALUNOS);
 
-  while (i < nDeHabitantes) {
-    // Coleta os dados
-    printf(">>> ");
-    scanf("%d", &nDeFilhos[i]);
-
-    // Coloca o identificador do habitante
-    // 0, 1, 2, 3, ...
-    codigos[i] = i;
-
-    // Compara pra ver se essa pessoa e a q tem mais
-    if (nDeFilhos[i] > maiorNDeFilhos) {
-      maiorNDeFilhos = nDeFilhos[i];
-      maisFilhosCodigo = i;
+  for (x = 0; x <= ALUNOS; x = x + 1) {
+    printf("Qual a idade do aluno %d?", x = x + 1);
+    scanf("%i", &IDADE);
+    if (IDADE % 2 == 0) {
+      SOMA = SOMA + IDADE;
     }
-
-    // Incrementa 1 no contador "i"
-    i++;
   }
-
-  // Resultado final na tela
-  printf("O cidadao %d tem %d filhos \n", maisFilhosCodigo, maiorNDeFilhos);
-
+  printf("A soma dos numeros pares da: %i", SOMA);
   return 0;
 }
