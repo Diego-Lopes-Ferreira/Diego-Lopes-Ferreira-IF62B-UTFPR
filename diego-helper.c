@@ -1,16 +1,25 @@
 #include <stdio.h>
-int main() {
-  int ALUNOS, x, SOMA = 0, IDADE;
-  printf("Qual a quantidade maxima de alunos de uma turma?\n");
-  scanf("%i", &ALUNOS);
+#include <stdlib.h>
 
-  for (x = 0; x <= ALUNOS; x = x + 1) {
-    printf("Qual a idade do aluno %d?", x = x + 1);
-    scanf("%i", &IDADE);
-    if (IDADE % 2 == 0) {
-      SOMA = SOMA + IDADE;
-    }
-  }
-  printf("A soma dos numeros pares da: %i", SOMA);
-  return 0;
+int main()
+{
+   int num;
+   FILE *fptr;
+
+   // use appropriate location if you are using MacOS or Linux
+   fptr = fopen("./program.txt","w");
+
+   if(fptr == NULL)
+   {
+      printf("Error!");   
+      exit(1);             
+   }
+
+   printf("Enter num: ");
+   scanf("%d",&num);
+
+   fprintf(fptr,"%d",num);
+   fclose(fptr);
+
+   return 0;
 }
